@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">Expense<span>Tracker</span></div>
+        <p>Manage your money smartly</p>
+    </header>
+
+    <main class="container">
+
+        <section class="welcome">
+            <div>
+                <h1>My Dashboard</h1>
+                <p>Track your income and expenses in one place.</p>
+            </div>
+            <span id="today"></span>
+        </section>
+
+        <!-- Financial Summary -->
+        <section class="summary">
+
+            <div class="summary-card balance">
+                <p>Total Balance</p>
+                <h2 id="balance">₹0.00</h2>
+            </div>
+
+            <div class="summary-card income">
+                <p>Total Income</p>
+                <h2 id="income">₹0.00</h2>
+            </div>
+
+            <div class="summary-card expense">
+                <p>Total Expenses</p>
+                <h2 id="expense">₹0.00</h2>
+            </div>
+
+        </section>
+
+        <!-- Expense Visualization -->
+        <section class="chart-card">
+            <h2>Expense by Category</h2>
+            <p class="subtitle">Understand where your money goes.</p>
+
+            <div id="expense-chart">
+                <p class="empty">No expense data available yet.</p>
+            </div>
+        </section>
+
+        <!-- Transaction Section -->
+        <section class="content">
+
+            <div class="form-card">
+
+                <h2>Add Transaction</h2>
+
+                <form id="transaction-form">
+
+                    <label>Transaction Title</label>
+                    <input type="text" id="title" placeholder="e.g. Shopping" required>
+
+                    <label>Amount (₹)</label>
+                    <input type="number" id="amount" placeholder="Enter amount" min="0.01" step="0.01" required>
+
+                    <label>Transaction Type</label>
+                    <select id="type">
+                        <option value="income">Income</option>
+                        <option value="expense">Expense</option>
+                    </select>
+
+                    <label>Category</label>
+                    <select id="category">
+                        <option value="Salary">Salary</option>
+                        <option value="Food">Food</option>
+                        <option value="Shopping">Shopping</option>
+                        <option value="Travel">Travel</option>
+                        <option value="Education">Education</option>
+                        <option value="Bills">Bills</option>
+                        <option value="Other">Other</option>
+                    </select>
+
+                    <label>Date</label>
+                    <input type="date" id="date" required>
+
+                    <button type="submit" class="add-btn">
+                        + Add Transaction
+                    </button>
+
+                </form>
+
+            </div>
+
+            <!-- Transaction History -->
+            <div class="history-card">
+
+                <div class="history-header">
+                    <h2>Recent Transactions</h2>
+
+                    <select id="filter">
+                        <option value="all">All</option>
+                        <option value="income">Income</option>
+                        <option value="expense">Expenses</option>
+                    </select>
+                </div>
+
+                <div id="transaction-list">
+                    <p class="empty">No transactions yet.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 ExpenseTrack. Manage your money wisely.</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
